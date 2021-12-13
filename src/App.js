@@ -1,10 +1,15 @@
+import { useState } from "react";
+import "./App.css";
+import AddTask from "./Components/AddTask";
+import ListTask from "./Components/ListTask";
 
-import './App.css';
 
 function App() {
+  const [tasks, settasks]=useState([])
   return (
-    <div className="App">
-     
+    <div className='todo-app'>
+      <AddTask />
+      <ListTask tasks={tasks} settasks={settasks}/>
     </div>
   );
 }

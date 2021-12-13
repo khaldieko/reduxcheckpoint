@@ -1,0 +1,6 @@
+const DeleteTasktypes = {
+  DELETE_TASK_SUCCESS: "DELETE_TASK_SUCCESS",
+  DELETE_TASK_ERROR: "DELETE_TASK_ERROR",
+  DELETE_TASK_PENDING: "DELETE_TASK_PENDING",
+};
+export default DeleteTasktypes;
