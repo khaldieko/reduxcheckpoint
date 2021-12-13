@@ -1,16 +1,12 @@
-import { React, useEffect } from "react";
-import GetTask from "../Redux/Actions/GetTaskActions";
-import { useDispatch } from "react-redux";
-function ListTask({ tasks, settasks }) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const data = dispatch(GetTask());
-    settasks(data);
-  }, []);
+import { React } from "react";
+
+function ListTask({ tasks }) {
   return (
-    <div>
-      {tasks.map((task) => (
-        <div>{task}</div>
+    <div className="todo-container">
+      {tasks.map((task, i) => (
+        <div className="todo-row" key={`${task} ${i}`}>
+          {task}
+        </div>
       ))}
     </div>
   );

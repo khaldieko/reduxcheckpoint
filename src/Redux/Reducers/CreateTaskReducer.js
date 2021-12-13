@@ -1,15 +1,12 @@
-const initTask={
-    id:"",
-    description:"",
-    title:""
-}
-const CreateTaskReducer=(state=initTask, action)=>{
-    switch(action.type){
-        case "ADD_TASK_SUCCESS":
-            return {...initTask, ...action.payload}
-            default:
-                return initTask
-    }
-}
+const inittasks = {tasks:[]};
+const CreateTaskReducer = (state = inittasks, action) => {
+  switch (action.type) {
+    case "ADD_TASK_SUCCESS":
+        console.log(action)
+      return {...state, tasks: [...state.tasks, action.payload.task]};
+    default:
+      return state;
+  }
+};
 
-export default CreateTaskReducer
+export default CreateTaskReducer;

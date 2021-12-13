@@ -85,7 +85,7 @@ h1 {
 
 .todo-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
 }
 
