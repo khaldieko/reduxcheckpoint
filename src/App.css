@@ -135,6 +135,10 @@ h1 {
   align-items: center;
   font-size: 24px;
   cursor: pointer;
+  justify-content: space-between;
+}
+.icons-edit{
+  margin-right: 20px;
 }
 
 .delete-icon {

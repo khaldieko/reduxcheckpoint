@@ -1,24 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import AddTask from "./Components/AddTask";
 import ListTask from "./Components/ListTask";
-import GetTask from "./Redux/Actions/GetTaskActions";
-import { useSelector, useDispatch } from "react-redux";
+
+import { useSelector } from "react-redux";
 
 function App() {
-  const [tasks, settasks] = useState([]);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(GetTask());
-  }, []);
+  const [edit, setedit]= useState(false)
+  const [index, setindex] = useState(0);
   const {
     createTask: { tasks: data },
   } = useSelector((state) => state);
-  console.log(data);
+  function SaveIndex(params) {
+    console.log(params)
+    if (params.toString().length >=0)setedit(true)
+    setindex(params);
+  }
+  
   return (
     <div className="todo-app">
-      <AddTask />
-      <ListTask tasks={data} />
+      <AddTask index={index} edit={edit} setedit={setedit}/>
+      <ListTask tasks={data} SaveIndex={SaveIndex} />
     </div>
   );
 }
