@@ -9,7 +9,7 @@ function ListTask({ SaveIndex, tasks }) {
     <div className="todo-container">
       {tasks.map((task, i) => (
         <div className="todo-row" key={`${task} ${i}`}>
-          {task}
+          {task.task}
 
           <div className="icons">
             <AiFillEdit onClick={()=>{SaveIndex(i)}}className="icons-edit" />

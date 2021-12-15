@@ -12,10 +12,13 @@ function AddTask({ index, edit, setedit }) {
     e.preventDefault();
 
     if (edit) {
-      dispatch(EditTask({ task, index }));
+      console.log(edit, task)
+      const data = { new:task, index };
+      dispatch(EditTask({ task: data }));
       setedit(false);
     } else {
-      dispatch(CreateTask({ task }));
+      const data = { task, done: false };
+      dispatch(CreateTask({ task: data }));
       settask("");
     }
   }
