@@ -1,6 +1,6 @@
-import MarkDonetypes from "../Types/MarkDoneType";
+import {MARK_DONE} from "../Types/MarkDoneType";
 
 const markdone = (data) => (dispatch) => {
-  dispatch({ type: MarkDonetypes.MARK_DONE, payload: data });
+  dispatch({ type: MARK_DONE, payload: data });
 };
 export default markdone;

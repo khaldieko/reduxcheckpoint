@@ -7,7 +7,8 @@ const CreateTaskReducer = (state = inittasks, action) => {
       const initTask = state.tasks[action.payload.task.index];
 
       const data = { ...initTask, task: action.payload.task.new };
-      state.tasks.splice(action.payload.task.index, 1, data);
+      state.tasks.splice(action.payload.task.index, 1, data
+        );
       return { ...state, tasks: state.tasks };
     case "MARK_DONE":
       const done = {
