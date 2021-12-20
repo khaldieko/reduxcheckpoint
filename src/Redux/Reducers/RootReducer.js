@@ -1,10 +1,10 @@
-import CreateTaskReducer from "./CreateTaskReducer";
-import GetTaskReducer from "./GetTaskReducer";
+import TaskReducer from "./TaskReducer";
+
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  getTask: GetTaskReducer,
-  createTask: CreateTaskReducer,
+
+  Tasks: TaskReducer,
 });
 
 export default rootReducer;

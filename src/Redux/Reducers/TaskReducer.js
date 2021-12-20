@@ -1,5 +1,5 @@
 const inittasks = { tasks: [] };
-const CreateTaskReducer = (state = inittasks, action) => {
+const TaskReducer = (state = inittasks, action) => {
   switch (action.type) {
     case "ADD_TASK_SUCCESS":
       return { ...state, tasks: [...state.tasks, action.payload.task] };
@@ -22,4 +22,4 @@ const CreateTaskReducer = (state = inittasks, action) => {
   }
 };
 
-export default CreateTaskReducer;
+export default TaskReducer;

@@ -10,10 +10,10 @@ function App() {
   const [index, setindex] = useState(0);
 
   const {
-    createTask: { tasks: data },
+    Tasks: { tasks: data },
   } = useSelector((state) => state);
   function SaveIndex(params) {
-    console.log(params)
+    
     if (params.toString().length >=0)setedit(true)
     setindex(params);
   }
