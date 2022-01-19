@@ -1,28 +1,26 @@
-import { useState } from "react";
-import "./App.css";
-import AddTask from "./Components/AddTask";
-import ListTask from "./Components/ListTask";
+import React from "react";
 
-import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./login";
+
+
+import Homepage from "./Homepage";
+import SignUp from "./signup";
+import Mainpage from "./Mainpage";
 
 function App() {
-  const [edit, setedit]= useState(false)
-  const [index, setindex] = useState(0);
-
-  const {
-    Tasks: { tasks: data },
-  } = useSelector((state) => state);
-  function SaveIndex(params) {
-    
-    if (params.toString().length >=0)setedit(true)
-    setindex(params);
-  }
-  
   return (
-    <div className="todo-app">
-      <AddTask index={index} edit={edit} setedit={setedit}/>
-      <ListTask tasks={data} SaveIndex={SaveIndex} />
-    </div>
+    <Router>
+      <>
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/signup" element={<SignUp/>} />
+          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/home" element={<Mainpage/>} />
+          
+        </Routes>
+      </>
+    </Router>
   );
 }
 
